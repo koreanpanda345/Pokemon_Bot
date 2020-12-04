@@ -4,7 +4,7 @@ const sqlite = require('sqlite');
 const Pokedex = require('pokedex-promise-v2');
 const P = new Pokedex();
 const db = require('quick.db');
-const {RichEmbed} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 const {token} = require('./config.json')
 const dbInit = require('./DBInit');
 const client = new CommandoClient({
@@ -50,7 +50,7 @@ client.registry
 		P.getPokemonByName(spawn, function(response, error){
 			if(!error){
 				console.log(response.forms[0].name);
-				let embed = new RichEmbed()
+				let embed = new MessageEmbed()
 				.setTitle(`A wild pokemon`)
 				.setDescription(`Type ${client.provider.get(message.guild, "prefix") || client.commandPrefix}catch <pokemon name>`)
 				.setImage(`https://play.pokemonshowdown.com/sprites/ani/${response.forms[0].name}.gif`);
