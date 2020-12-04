@@ -1,5 +1,5 @@
 const {Command} = require('discord.js-commando');
-const {RichEmbed} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 const db = require('quick.db');
 
 module.exports = class StoreCommand extends Command{
@@ -13,7 +13,7 @@ module.exports = class StoreCommand extends Command{
     }
     run(message){
         let sections = ["Leveling"];
-        let embed = new RichEmbed();
+        let embed = new MessageEmbed();
         let str = "";
         let n = 1;
         for(let i = 0; i < sections.length; ++i){
