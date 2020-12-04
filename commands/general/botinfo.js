@@ -1,5 +1,5 @@
 const {Command} = require('discord.js-commando');
-const {RichEmbed} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 
 module.exports = class BotInfoCommand extends Command{
     constructor(client){
@@ -11,7 +11,7 @@ module.exports = class BotInfoCommand extends Command{
         });
     }
     run(message){
-        let embed = new RichEmbed();
+        let embed = new MessageEmbed();
         embed.setTitle(`Pokedex Entry for ${this.client.user.username}!`);
         embed.setDescription(`It is said that it can connect pokemons to a website called Discord.`);
         embed.addField(`Type`, `Normal-Electric`, true);
