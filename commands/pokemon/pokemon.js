@@ -1,5 +1,5 @@
 const {Command} = require('discord.js-commando');
-const {RichEmbed} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 const db = require('quick.db');
 
 module.exports = class PokemonCommand extends Command{
@@ -19,7 +19,7 @@ module.exports = class PokemonCommand extends Command{
     }
     run(message, {pageNum}){
         let i = 1;
-        let embed = new RichEmbed();
+        let embed = new MessageEmbed();
         let pokes = [];
         while(db.has(`pokemon_${i}_${message.author.id}`)){
             ++i;
