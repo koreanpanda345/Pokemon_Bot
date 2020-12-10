@@ -1,5 +1,5 @@
 const {Command} = require('discord.js-commando');
-const {RichEmbed} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 const db = require("quick.db");
 const Pokedex = require('pokedex-promise-v2');
 const P = new Pokedex();
@@ -45,7 +45,7 @@ module.exports = class InfoCommand extends Command{
           let spdefBase = response.stats[4].base_stat;
           let speedBase = response.stats[5].base_stat;
 
-            let embed = new RichEmbed()
+            let embed = new MessageEmbed()
             .setTitle(`${message.author.username}'s level ${level} ${name}`)
             .setDescription(`EXP: ${exp}`);
             

@@ -1,5 +1,5 @@
 const {Command} = require('discord.js-commando');
-const {RichEmbed} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 const db = require('quick.db');
 
 module.exports = class PickCommand extends Command{
@@ -42,7 +42,7 @@ module.exports = class PickCommand extends Command{
         db.set(`${message.author.id}_selected`, {pokemonId: 1});
         db.set(`pokemon_amount_${message.author.id}`, {num: 1});
         db.set(`pokemon_1_${message.author.id}`, {name: pokemon.toLowerCase(), level:1, exp: 0,hp:hp, atk: atk, def: def, spatk: spatk, spdef: spdef, speed: speed, shiny: 0});
-        let embed = new RichEmbed()
+        let embed = new MessageEmbed()
         .setTitle(`Congratulations ${message.author.username}. You got your first pokemon`)
         .setDescription(`Your recieved a **Level ${db.get(`pokemon_1_${message.author.id}.level`)} ${db.get(`pokemon_1_${message.author.id}.name`)}**`);
 

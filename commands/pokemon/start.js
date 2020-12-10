@@ -1,5 +1,5 @@
 const {Command} = require('discord.js-commando');
-const {RichEmbed} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 
 module.exports = class StartCommand extends Command {
     constructor(client) {
@@ -11,7 +11,7 @@ module.exports = class StartCommand extends Command {
         });
     }
     run(message) {
-        let embed = new RichEmbed()
+        let embed = new MessageEmbed()
         .setDescription(`Welcome, ${message.author.username} to the world of Pokemon. Who am I, your asking, well I am Pokemon Bot.
         I will be with you on your journy through this world. but before we can do that, you need a pokemon. How about I give you one.`)
         //Grass: 🍃 | Fire: 🔥 | Water: 💧
